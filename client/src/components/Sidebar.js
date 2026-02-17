@@ -9,27 +9,27 @@ const Sidebar = ({ onLogout }) => {
         <div className="sidebar">
             <div className="logo-section">
                 <i className="bi bi-book-half logo-icon"></i>
-                <span>Libra</span>
+                <span className="brand-name-text">SmartLib</span>
             </div>
             
-            {/* Nav container grows to fill space on desktop, horizontal on mobile */}
-            <nav className="nav-section" style={{ flex: 1, overflowY: 'auto' }}>
+            <div className="nav-links-wrapper">
                 <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
-                    <i className="bi bi-grid"></i> Dashboard
+                    <i className="bi bi-grid"></i> <span>Dashboard</span>
                 </Link>
                 <Link to="/books" className={`nav-link ${location.pathname === '/books' ? 'active' : ''}`}>
-                    <i className="bi bi-collection"></i> Manage Books
+                    <i className="bi bi-collection"></i> <span>Books</span>
                 </Link>
                 <Link to="/circulation" className={`nav-link ${location.pathname === '/circulation' ? 'active' : ''}`}>
-                    <i className="bi bi-arrow-left-right"></i> Circulation
+                    <i className="bi bi-arrow-left-right"></i> <span>Circulation</span>
                 </Link>
                 <Link to="/admins" className={`nav-link ${location.pathname === '/admins' ? 'active' : ''}`}>
-                    <i className="bi bi-shield-lock"></i> Manage Admins
+                    <i className="bi bi-shield-lock"></i> <span>Admins</span>
                 </Link>
-            </nav>
+            </div>
             
             <button onClick={onLogout} className="logout-btn">
-                <i className="bi bi-box-arrow-right"></i> <span className="logout-text">Logout</span>
+                <i className="bi bi-box-arrow-right"></i> 
+                <span className="logout-text">Logout</span>
             </button>
         </div>
     );

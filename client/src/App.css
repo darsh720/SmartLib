@@ -762,3 +762,149 @@ td {
   color: #4A5568;
   font-weight: 500;
 }
+
+
+
+/* --- Professional Dashboard Grid --- */
+.charts-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chart-title i { color: var(--primary); }
+
+/* --- Admin Split Styling --- */
+.admin-split-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+}
+
+.role-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border: 4px solid #f0f0f0;
+}
+
+.role-circle.super { color: #4e73df; border-color: #ebf0ff; background: #f8faff; }
+.role-circle.regular { color: var(--primary); border-color: #fff5f2; background: #fffcfb; }
+
+/* --- Transaction Focus Card --- */
+.chart-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.date-picker-input {
+    border: 1px solid #E2E8F0;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    outline: none;
+}
+
+.transaction-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fcfcfc;
+    border-radius: 12px;
+}
+
+.t-stat { display: flex; flex-direction: column; }
+.t-label { font-size: 0.75rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; }
+.t-count { font-size: 1.4rem; font-weight: 800; }
+
+/* --- Mini Table --- */
+.mini-table { width: 100%; border-collapse: collapse; }
+.mini-table th { text-align: left; font-size: 0.75rem; color: var(--text-light); padding-bottom: 10px; }
+.mini-table td { padding: 8px 0; font-size: 0.85rem; border-top: 1px solid #f8f8f8; }
+
+.status-pill {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.status-pill.issued { background: #fff5f2; color: var(--primary); }
+.status-pill.returned { background: #ebf0ff; color: #4e73df; }
+
+@media screen and (max-width: 480px) {
+    .charts-main-grid { grid-template-columns: 1fr; }
+    .chart-header-flex { flex-direction: column; gap: 10px; }
+}
+
+
+/* Pie Chart Styling */
+.pie-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.pie-svg {
+    width: 140px;
+    height: 140px;
+    transform: rotate(-90deg); /* Start at top */
+    border-radius: 50%;
+}
+
+.pie-legend {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+}

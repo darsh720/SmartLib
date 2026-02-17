@@ -13,7 +13,7 @@ const ManageAdmins = () => {
 
     const fetchAdmins = async () => {
         try {
-            const res = await axios.get('http://192.168.31.68:5000/api/admins');
+            const res = await axios.get('http://localhost:5000/api/admins');
             setAdmins(res.data);
         } catch (err) { console.error(err); }
     };
@@ -21,7 +21,7 @@ const ManageAdmins = () => {
     const handleCreate = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://192.168.31.68:5000/api/admins', { ...form, sendEmail });
+            await axios.post('http://localhost:5000/api/admins', { ...form, sendEmail });
             alert('New Admin Created Successfully');
             setShowCreate(false);
             setForm({ full_name: '', email: '', username: '', password: '' });
@@ -33,7 +33,7 @@ const ManageAdmins = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this admin?')) {
             try {
-                await axios.delete(`http://192.168.31.68:5000/api/admins/${id}`);
+                await axios.delete(`http://localhost:5000/api/admins/${id}`);
                 fetchAdmins();
             } catch (err) { alert('Error deleting admin'); }
         }
